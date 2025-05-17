@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick  Image Reducer Web App</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>Quick  Image Reducer</h1>
+        <p class="tagline">Optimize your PNG images quickly and easily</p>
+      </header>
+      
+      <main class="app-container">
+        <div class="upload-container" id="uploadContainer">
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11L12 8 15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 16.7428C21.2215 15.734 22 14.2079 22 12.5C22 9.46243 19.5376 7 16.5 7C16.2815 7 16.0771 6.886 15.9661 6.69774C14.6621 4.48484 12.2544 3 9.5 3C5.35786 3 2 6.35786 2 10.5C2 12.5661 2.83545 14.4371 4.18695 15.7935" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 16L12 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 20V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Drop your PNG image here</h3>
+            <p>or</p>
+            <label for="fileInput" class="upload-button">Browse Files</label>
+            <input type="file" id="fileInput" accept="image/png" hidden>
+            <p class="upload-instructions">Only PNG files are supported</p>
+          </div>
+        </div>
+
+        <div class="processing-container hidden" id="processingContainer">
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <p class="processing-text">Processing your image...</p>
+        </div>
+
+        <div class="result-container hidden" id="resultContainer">
+          <div class="comparison-container">
+            <div class="image-comparison">
+              <div class="comparison-item">
+                <h3>Original</h3>
+                <div class="image-preview" id="originalPreview"></div>
+                <p class="file-info" id="originalInfo">Size: <span id="originalSize">0</span> KB</p>
+              </div>
+              <div class="comparison-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="comparison-item">
+                <h3>Reduced</h3>
+                <div class="image-preview" id="reducedPreview"></div>
+                <p class="file-info" id="reducedInfo">Size: <span id="reducedSize">0</span> KB</p>
+                <p class="reduction-info">Reduced by <span id="reductionPercentage">0</span>%</p>
+              </div>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button id="downloadButton" class="primary-button">Download Reduced Image</button>
+            <button id="resetButton" class="secondary-button">Process Another Image</button>
+          </div>
+        </div>
+
+        <div class="error-container hidden" id="errorContainer">
+          <div class="error-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 16.01L12.01 15.9989" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 id="errorTitle">Error</h3>
+          <p id="errorMessage"></p>
+          <button id="errorResetButton" class="secondary-button">Try Again</button>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <p>&copy; 2025 Quick  Image Reducer. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

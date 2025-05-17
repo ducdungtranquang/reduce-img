@@ -1,0 +1,102 @@
+@media (min-width: 576px) {
+  .app-container {
+    padding: 0 var(--space-5) var(--space-6);
+  }
+  
+  .upload-area {
+    padding: var(--space-5);
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-header {
+    padding: var(--space-6) var(--space-5);
+  }
+  
+  .app-container {
+    padding: 0 var(--space-6) var(--space-7);
+  }
+  
+  .upload-area {
+    padding: var(--space-6);
+  }
+  
+  .image-comparison {
+    flex-wrap: nowrap;
+  }
+  
+  .comparison-item {
+    min-width: 0;
+  }
+  
+  .upload-icon svg,
+  .error-icon svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-container {
+    max-width: 1000px;
+  }
+  
+  .image-preview {
+    min-height: 250px;
+  }
+  
+  .preview-image {
+    max-height: 250px;
+  }
+  
+  .upload-area {
+    transition: all var(--transition-normal), transform 0.2s ease;
+  }
+  
+  .upload-area:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (min-width: 1280px) {
+  .app-container {
+    max-width: 1100px;
+  }
+  
+  .image-preview {
+    min-height: 300px;
+  }
+  
+  .preview-image {
+    max-height: 300px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1a1a1a;
+    --color-card: #2a2a2a;
+    --color-text: #f5f5f7;
+    --color-text-secondary: #a1a1a6;
+    --color-border: #444444;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-primary-light: rgba(0, 113, 227, 0.3);
+  }
+  
+  .upload-area:hover {
+    background-color: rgba(0, 113, 227, 0.1);
+  }
+  
+  .image-preview {
+    background-color: #242424;
+  }
+  
+  .secondary-button:hover {
+    background-color: #333333;
+  }
+}
